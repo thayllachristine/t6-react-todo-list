@@ -11,17 +11,36 @@ class Input extends React.Component {
     }
 
 
+    hasError = () => {
+        if (this.state.message) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+
+    getValue = () => {
+        return
+    }
+
+
     handleChange = (e) => {
         const value = e.target.value
+        const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         let message = ``
 
         console.log('oi', value)
 
         if (this.props.required && value.trim() === ``) {
             message = `Campo obrigatório`
+        } else if (this.props.minLength && value.length < this.props.minLength) {
+            message = `Digite pelo menos ${this.props.minLength} caracteres!`
+        } else if (this.props.type === `email` && !regex.test(value)) {
+            message = `Digite um e-mail válido`
         }
 
-        this.setState({ message: message })
+        this.setState({ message: message }, this.props.onChanged())
     }
 
 
