@@ -6,8 +6,6 @@ function Button(props) {
 
     if (props.disabled) {
         classes += ' button--disable'
-    } else {
-        classes -= ''
     }
 
     return (
