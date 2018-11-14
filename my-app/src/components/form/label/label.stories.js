@@ -6,5 +6,5 @@ import Label from './index'
 
 storiesOf(`Label`, module)
     .add(`default`, () => (
-        <Label />
+        <Label>Children Here</Label>
     ))
