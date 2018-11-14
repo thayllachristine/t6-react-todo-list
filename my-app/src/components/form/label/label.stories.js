@@ -4,7 +4,8 @@ import { storiesOf } from '@storybook/react'
 
 import Label from './index'
 
-storiesOf(`Label`, module)
+storiesOf(`Components/Form/Label`, module)
     .add(`default`, () => (
         <Label>Children Here</Label>
     ))
+
