@@ -48,7 +48,7 @@ class SignUp extends React.Component {
                     <Form.Label htmlFor='passwordInput'>Senha</Form.Label>
                     <Form.Input type='password' id='passwordInput' className='password-input' minLength={6} placeholder='******' required onChanged={this.onDisabledButton} ref={this.password} />
                     <Form.Button disabled={this.state.disabled}>Enviar</Form.Button>
-                    <Form.Link href='#'>Fazer login</Form.Link>
+                    <Form.Link href='/login'>Fazer login</Form.Link>
                 </Form>
             </Container>
         )
