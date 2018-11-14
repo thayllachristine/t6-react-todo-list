@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 
 import Input from './index'
 
-storiesOf(`Input`, module)
+storiesOf(`Components/Form/Input`, module)
     .add(`default`, () => (
         <Input type='text' />
     ))
